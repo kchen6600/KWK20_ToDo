@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		7449B7C524819810009CCE64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7449B7C424819810009CCE64 /* AppDelegate.swift */; };
 		7449B7C724819810009CCE64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7449B7C624819810009CCE64 /* SceneDelegate.swift */; };
-		7449B7C924819810009CCE64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7449B7C824819810009CCE64 /* ViewController.swift */; };
 		7449B7CC24819810009CCE64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7449B7CA24819810009CCE64 /* Main.storyboard */; };
 		7449B7CF24819810009CCE64 /* KWK20_ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7449B7CD24819810009CCE64 /* KWK20_ToDoList.xcdatamodeld */; };
 		7449B7D124819814009CCE64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7449B7D024819814009CCE64 /* Assets.xcassets */; };
 		7449B7D424819814009CCE64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7449B7D224819814009CCE64 /* LaunchScreen.storyboard */; };
 		7449B7DF24819814009CCE64 /* KWK20_ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7449B7DE24819814009CCE64 /* KWK20_ToDoListTests.swift */; };
 		7449B7EA24819814009CCE64 /* KWK20_ToDoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7449B7E924819814009CCE64 /* KWK20_ToDoListUITests.swift */; };
+		7449B7F82481A206009CCE64 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7449B7F72481A206009CCE64 /* TableViewController.swift */; };
+		7449B7FA2481A23F009CCE64 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7449B7F92481A23F009CCE64 /* ToDo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,6 @@
 		7449B7C124819810009CCE64 /* KWK20_ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KWK20_ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7449B7C424819810009CCE64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7449B7C624819810009CCE64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7449B7C824819810009CCE64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7449B7CB24819810009CCE64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7449B7CE24819810009CCE64 /* KWK20_ToDoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KWK20_ToDoList.xcdatamodel; sourceTree = "<group>"; };
 		7449B7D024819814009CCE64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +51,8 @@
 		7449B7E524819814009CCE64 /* KWK20_ToDoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KWK20_ToDoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7449B7E924819814009CCE64 /* KWK20_ToDoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KWK20_ToDoListUITests.swift; sourceTree = "<group>"; };
 		7449B7EB24819814009CCE64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7449B7F72481A206009CCE64 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		7449B7F92481A23F009CCE64 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +103,11 @@
 		7449B7C324819810009CCE64 /* KWK20_ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				7449B7F72481A206009CCE64 /* TableViewController.swift */,
 				7449B7C424819810009CCE64 /* AppDelegate.swift */,
 				7449B7C624819810009CCE64 /* SceneDelegate.swift */,
-				7449B7C824819810009CCE64 /* ViewController.swift */,
 				7449B7CA24819810009CCE64 /* Main.storyboard */,
+				7449B7F92481A23F009CCE64 /* ToDo.swift */,
 				7449B7D024819814009CCE64 /* Assets.xcassets */,
 				7449B7D224819814009CCE64 /* LaunchScreen.storyboard */,
 				7449B7D524819814009CCE64 /* Info.plist */,
@@ -262,10 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7449B7C924819810009CCE64 /* ViewController.swift in Sources */,
 				7449B7C524819810009CCE64 /* AppDelegate.swift in Sources */,
+				7449B7FA2481A23F009CCE64 /* ToDo.swift in Sources */,
 				7449B7C724819810009CCE64 /* SceneDelegate.swift in Sources */,
 				7449B7CF24819810009CCE64 /* KWK20_ToDoList.xcdatamodeld in Sources */,
+				7449B7F82481A206009CCE64 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
