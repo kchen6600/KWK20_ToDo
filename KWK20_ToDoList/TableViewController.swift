@@ -11,23 +11,33 @@ import UIKit
 class TableViewController: UITableViewController {
 
     
-    var toDos : [ToDo] = []
+    var toDos : [ToDoCD] = []
     
-    func createToDos() -> [ToDo] {
-        let swift = ToDo()
-        swift.name = "Learn Swift"
-        swift.important = true
-        
-        let dog = ToDo()
-        dog.name = "Walk the Dog"
-        
-        return [swift, dog]
+//    func createToDos() -> [ToDo] {
+//        let swift = ToDo()
+//        swift.name = "Learn Swift"
+//        swift.important = true
+//
+//        let dog = ToDo()
+//        dog.name = "Walk the Dog"
+//
+//        return [swift, dog]
+//    }
+    
+   func getToDos() {
+      if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+
+        if let coreDataToDos = try? context.fetch(ToDoCD.fetchRequest()) as? [ToDoCD] {
+                toDos = coreDataToDos
+                tableView.reloadData()
+        }
+      }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        toDos = createToDos()
+    
+//        toDos = createToDos()
     }
 
     // MARK: - Table view data source
@@ -55,12 +65,14 @@ class TableViewController: UITableViewController {
         
         let toDo = toDos[indexPath.row]
         
-        if toDo.important {
-            cell.textLabel?.text = "!" + toDo.name
+        if let name = toDo.name {
+          if toDo.important {
+              cell.textLabel?.text = "❗️" + name
+          } else {
+              cell.textLabel?.text = toDo.name
+          }
         }
-        else{
-            cell.textLabel?.text = toDo.name
-        }
+
 
         return cell
     }
@@ -72,11 +84,15 @@ class TableViewController: UITableViewController {
         addVC.previousVC = self
       }
       if let completeVC = segue.destination as? CompleteToDoViewController {
-        if let toDo = sender as? ToDo {
+        if let toDo = sender as? ToDoCD {
             completeVC.selectedToDo = toDo
             completeVC.previousVC = self
           }
       }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+      getToDos()
     }
 
 }
